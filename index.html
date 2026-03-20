@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Hari Raya 💖</title>
+
+  <!-- Font lawa -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      text-align: center;
+      color: #333;
+    }
+
+    .card {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      padding: 40px;
+      margin: auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #e67e22;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .love {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #e74c3c;
+      font-weight: bold;
+    }
+
+    /* ❤️ animasi hati jatuh */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: red;
+      font-size: 20px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #e67e22;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Selamat Hari Raya 🌙✨</h1>
+
+    <p>
+      Buat <b>Mirsya Marsya Nur binti Mahathir</b>,<br><br>
+
+      Di hari yang penuh keberkatan ini, saya ingin memohon maaf atas segala salah dan silap.<br><br>
+
+      Tapi dalam banyak-banyak perkara… satu yang saya pasti —<br>
+      kehadiran awak dalam hidup saya adalah sesuatu yang paling indah. 💖<br><br>
+
+      Semoga Raya kali ini membawa kebahagiaan yang tak terhingga untuk awak…  
+      dan semoga saya masih diberi peluang untuk menjadi sebab awak tersenyum. 🌹
+    </p>
+
+    <p class="love">
+      Selamat Hari Raya, sayang ❤️
+    </p>
+
+    <button onclick="playMusic()">Play Lagu 🎶</button>
+  </div>
+
+  <!-- 🎵 Lagu Raya -->
+  <audio id="lagu">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playMusic() {
+      document.getElementById("lagu").play();
+    }
+
+    // generate hati jatuh
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
